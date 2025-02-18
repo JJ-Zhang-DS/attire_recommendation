@@ -1,73 +1,55 @@
-# attire_recommendation
+# Attire Recommendation
 
-数据集描述
+## Project Overview
 
-文件描述
+This project involves building a recommendation system for attire using a provided dataset. The goal is to develop a recommendation system that suggests attire items to users based on their past interactions and item features. The recommendation system will help users discover new items that they might be interested in purchasing. This project is a collaboration with a Chinese e-commerce company.
 
-train_users.csv：训练数据集中的用户id
+## Dataset Description
 
-train_items.csv：训练数据集中的商品id
+The dataset includes information about users, items, and their interactions. Below is a description of the files and data fields included in the dataset.
 
-train_interactions.csv：训练数据集中的用户购买商品记录
+### Files
 
-test_users.csv：测试数据集中的用户
+- `train_users.csv`: Contains user IDs in the training dataset.
+- `train_items.csv`: Contains item IDs in the training dataset.
+- `train_interactions.csv`: Records of user purchases in the training dataset.
+- `test_users.csv`: Contains user IDs in the testing dataset.
+- `test_items.csv`: Contains item IDs in the testing dataset.
+- `sample.csv`: A sample output format where 20 items are randomly selected for each user in the testing dataset.
 
-test_items.csv：测试数据集中的商品
+### Data Fields
 
-sample.csv：为测试数据集中的每位用户, 从测试数据集中随机挑选20件商品。此文件为输出格式样本
+Below is a brief description of the data fields:
 
-数据字段
+- `user_id`: Unique identifier for users.
+- `item_ID`: Unique identifier for items.
+- `item_name`: Name of the item, including basic information.
+- `order_time`: Time when the user purchased the item.
+- `brand`: Brand of the item.
+- `channel`: Sales channel of the item.
+- `unit_price`: Unit price of the item.
+- `category`: Subcategory of the item.
+- `size`: Size of the item.
+- `color`: Color of the item.
+- `discount`: Discount applied to the item.
 
-以下是数据描述文件中的简要版本
+## Usage
 
-user_id：用户身份识别码
+1. **Data Preparation**: Ensure all the CSV files are placed in the appropriate directory.
+2. **Model Training**: Train the recommendation model using the training dataset.
+3. **Generating Recommendations**: Use the trained model to generate recommendations for users in the testing dataset.
+4. **Output**: The recommendations will be output in a format similar to `sample.csv`.
 
-item_ID：商品识别码
+## Requirements
 
-item_name：商品名称，包含商品基本信息
+- Python 3.x
+- LightFM
+- NumPy
+- Pandas
 
-order_time：用户购买商品的时间
+## Installation
 
-brand：商品品牌
+Install the required packages using pip:
 
-channel：商品出货渠道
-
-unit_price：商品单价
-
-category：商品子类别
-
-size：商品尺码
-
-color：商品颜色
-
-discount：商品出售折扣
-
-gender：商品所适合的客户性别（由商品名称 item_name 信息补全商品性别 sex 中的 NaN）
-
-class_map：商品大类别
-
-bk_sku_id：商品识别编号
-
-category.1：部分商品别类
-
-style：商品风格
-
-brand_location_map：品牌所在国家（由 ChatGPT 根据品牌补全 country_in_stock 中的部分 NaN）
-
-materials_map：商品材料构成
-
-sex：商品性别
-
-country_size：所在国家尺码
-
-country_in_stock：品牌所在国家
-
-tag：商品标签
-
-price_range：价格范围
-
-country：国家
-
-style_50：商品所属主要风格
-
-color_50：商品所属主要色系
+```sh
+pip install lightfm numpy pandas
